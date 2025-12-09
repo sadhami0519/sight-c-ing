@@ -1,44 +1,52 @@
 #include <stdio.h>
 #include <windows.h>
 
-int sum, diff, product, quotient, remainder;
+int sum, diff, product, quotient, rem;
 
-void add(int a, int b) 
+int add(int a, int b) 
 {
     sum = a + b; 
     return sum;
 }
 
-void subtract(int a, int b) 
+int subtract(int a, int b) 
 {
     diff = (a > b)?(a - b):(b - a);
     return diff;
 }
 
-void multiply(int a,  int b) 
+int multiply(int a,  int b) 
 {
     product = a * b;
     return product;
 }
 
-void divide_q(double a, double b) 
+double divide_q(double a, double b) 
 {
     quotient = a / b;
     return quotient;
 }
 
-void divide_r(int a, int b) 
+int divide_r(int a, int b) 
 {
-    remainder = a % b;
-    return remainder;
+    rem = a % b;
+    return rem;
 }
 
+void decorate_first() {
+    int count = 0; //Local variables are assigned garbage values by DEFAULT
+    printf("-- CALCULATOR --\n");
+    printf("   Loading");
+    do {
+        printf(".");
+        Sleep(700);
+        count++;
+    } while (count != 3);
+}
 
 int main() {
 
-    printf("<-- C A L C U L A T O R ");
-    
-
+    decorate_first();
 
     return 0;
 
