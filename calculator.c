@@ -1,8 +1,12 @@
 /* Issues:
 
-1. Correct calculation issue with the multiplication function
-2. Accommodate double values in every function 
+1. [DONE] Correct calculation issue with the multiplication function
+2. Accommodate double values for every function 
 3. Implement sqrt, cube root, square and cube functions
+4. Correct calculation issue with quotient finding func
+5. [DONE] Implement a loop to re-do calculations until user decides to "exit" the program
+6. Implement a function that performs multiple operations at the same time 
+7. Fix issue with the remainder function
 
 */
 
@@ -12,7 +16,9 @@
 //For the usage of Windows-specific sleep operations
 #include <windows.h>
 
-int sum, diff, product, quotient, rem, op;
+int sum, diff, product, rem, op;
+int re_user_input;
+double quotient;
 int num1, num2;
 
 //Add operation
@@ -70,7 +76,7 @@ void decorate_first()
     } while (count != 3);
 }
 
-int decorate_second() 
+void decorate_second() 
 {
     printf("   ");
     printf("\n\nSelect a number from the following: \n");
@@ -79,18 +85,9 @@ int decorate_second()
     printf("2. Subtract (-)\n   ");
     printf("3. Multiply (*)\n   ");
     printf("4. Find Quotient (/)\n   ");
-    printf("4. Find Remainder\n   ");
+    printf("5. Find Remainder\n   ");
     printf("   Enter: ");
     scanf("%d", &op);
-
-    return op;
-}
-
-int main() 
-{
-
-    decorate_first();
-    decorate_second();
 
     switch (op) 
     {
@@ -128,6 +125,26 @@ int main()
         default:
             printf("Please enter a number between 1-5");
     }
+}
+
+int main() 
+{
+
+    //decorate_first(); Enable AFTER testing
+    decorate_second();
+
+    do {
+    printf("\nCalculate again?\n Enter 1 for 'Yes' and 0 and 'No'!\n");
+    scanf("%d", &re_user_input);
+    if (re_user_input == 1){
+        decorate_second();
+    }
+    else {
+        printf("Thank you for trying our calculator!");
+        return 0;
+    }
+    } while (re_user_input == 1);
+
     return 0;
 
 }
