@@ -1,3 +1,12 @@
+/* Issues:
+
+1. Correct calculation issue with the multiplication function
+2. Accommodate double values in every function 
+3. Implement sqrt, cube root, square and cube functions
+
+*/
+
+
 #include <stdio.h>
 
 //For the usage of Windows-specific sleep operations
@@ -16,7 +25,7 @@ int add(int a, int b)
 //Subtract operation
 int subtract(int a, int b) 
 {
-    diff = (a > b)?(a - b):(b - a);
+    diff = (a > b) ? (a - b) : (b - a);
     return diff;
 }
 
@@ -74,6 +83,15 @@ void decorate_second()
     printf("   Enter: ");
     scanf("%d", &op);
 
+    return op;
+}
+
+int main() 
+{
+
+    decorate_first();
+    decorate_second();
+
     switch (op) 
     {
         case 1: 
@@ -91,7 +109,7 @@ void decorate_second()
         case 3: 
             int_ops();
             multiply(num1, num2);
-            printf("%d", quotient);
+            printf("%d", product);
             break;
 
         case 4:
@@ -110,14 +128,6 @@ void decorate_second()
         default:
             printf("Please enter a number between 1-5");
     }
-}
-
-int main() 
-{
-
-    decorate_first();
-    decorate_second();
-
     return 0;
 
 }
