@@ -70,7 +70,7 @@ void decorate_first()
     } while (count != 3);
 }
 
-void decorate_second() 
+int decorate_second() 
 {
     printf("   ");
     printf("\n\nSelect a number from the following: \n");
