@@ -119,11 +119,12 @@ void decorate_second()
         case 5:
             int ops();
             divide_r(num1, num2);
-            printf("%lf", rem);
+            printf("%d", rem);
             break;
 
         default:
             printf("Please enter a number between 1-5");
+            break;
     }
 }
 
