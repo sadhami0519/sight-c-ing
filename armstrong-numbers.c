@@ -20,7 +20,7 @@ int main() {
     int num, sum_digits = 0, digit_count;
     int alt_num;
     
-    printf("---ARMSTRONG NUMBER CHECKING---\n");
+    printf("---ARMSTRONG NUMBER CHECKING---\n\n");
     
     printf("Enter a number: ");
     scanf("%d", &num);
@@ -42,9 +42,9 @@ int main() {
     }
     
     if (alt_num == sum_digits) {
-        printf("It is an Armstrong Number.");
+        printf("%d is an Armstrong Number.", alt_num);
         exit(0);
     }
-    printf("It is not an Armstrong Number.");
+    printf("%d is not an Armstrong Number.", alt_num);
     
 }
